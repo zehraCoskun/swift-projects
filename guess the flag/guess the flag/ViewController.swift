@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         title = countries[correctAnswer].uppercased()
         
         numberOfQuestion += 1
-        if numberOfQuestion == 3 {
+        if numberOfQuestion == 10 {
               let finalAC = UIAlertController(title: "Final!", message: "Completed 10 question", preferredStyle: .alert)
               finalAC.addAction(UIAlertAction(title: "Let's continue", style: .default))
               present(finalAC, animated: true)
@@ -65,6 +65,10 @@ class ViewController: UIViewController {
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         present(ac, animated: true)
         
+    }
+    
+    @IBAction func toInfoButton(_ sender: Any) {
+        performSegue(withIdentifier: "toInfo", sender: nil)
     }
     
     
