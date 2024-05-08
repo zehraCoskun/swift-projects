@@ -33,11 +33,24 @@ class DetailViewController: UIViewController {
         """
 
         webView.loadHTMLString(html, baseURL: nil)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                                            target: self,
+                                                            action: #selector(creditAction))
+    
+    
+  
 
         // Do any additional setup after loading the view.
     }
     
-
+    @objc func creditAction(){
+        let ac = UIAlertController(title: "Credits", 
+                                   message: "Data comes from the We The People API of the Whitehouse.",
+                                   preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(ac, animated: true)
+    }
    
 
 }

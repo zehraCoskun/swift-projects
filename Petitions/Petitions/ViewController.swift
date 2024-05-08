@@ -32,7 +32,20 @@ class ViewController: UITableViewController {
                 }
             } 
         showError()
+        
+        //navigation item eklenemiyor
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
+                                                            target: self,
+                                                            action: #selector(creditAction))
+        navigationItem.title = "asas"
     }
+    
+    @objc func creditAction(){
+        let ac = UIAlertController(title: "Credits", message: "Data comes from the We The People API of the Whitehouse.", preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(ac, animated: true)
+    }
+    
     func parse(json: Data) {
         let decoder = JSONDecoder()
 
