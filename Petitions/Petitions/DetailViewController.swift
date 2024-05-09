@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
 
         webView.loadHTMLString(html, baseURL: nil)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks,
                                                             target: self,
                                                             action: #selector(creditAction))
     
