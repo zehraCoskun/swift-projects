@@ -1,16 +1,16 @@
 //
 //  InfoViewController.swift
-//  guess the flag
+//  Guess The Flag
 //
-//  Created by Zehra Coşkun on 30.04.2024.
+//  Created by Zehra Coşkun on 10.05.2024.
 //
 
 import UIKit
 
 class InfoViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var flagImage: UIImageView!
+    @IBOutlet var flagImage: UIImageView!
+    @IBOutlet var tableView: UITableView!
     
     var countries = [String]()
     override func viewDidLoad() {
@@ -21,8 +21,6 @@ class InfoViewController: UIViewController {
         flagImage.layer.borderWidth = 3
         flagImage.layer.cornerRadius = 8
     }
-    
-
 
 }
 extension InfoViewController : UITableViewDelegate, UITableViewDataSource {

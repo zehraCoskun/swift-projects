@@ -1,18 +1,22 @@
 //
 //  ViewController.swift
-//  guess the flag
+//  Guess The Flag
 //
-//  Created by Zehra Coşkun on 29.04.2024.
+//  Created by Zehra Coşkun on 10.05.2024.
 //
+
 
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var flagTitleLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet var button1: UIButton!
+    @IBOutlet var button2: UIButton!
+    @IBOutlet var button3: UIButton!
+    
+    @IBOutlet var flagTitleLabel: UILabel!
+    
+    @IBOutlet var scoreLabel: UILabel!
     
     var countries = [String()]
     var correctAnswer = 0
@@ -74,4 +78,6 @@ class ViewController: UIViewController {
     
     
 }
+
+
 

@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  guess the flag
+//  Guess The Flag
 //
-//  Created by Zehra Coşkun on 29.04.2024.
+//  Created by Zehra Coşkun on 10.05.2024.
 //
 
 import UIKit
