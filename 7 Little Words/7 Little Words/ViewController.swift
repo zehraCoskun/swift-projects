@@ -22,6 +22,7 @@ class ViewController: UIViewController {
                 scoreLabel.text = "Score: \(score)"
             }
     }
+    var numberOfCorrectAnswer = 0
     var level = 1
     
     override func loadView() {
@@ -62,12 +63,15 @@ class ViewController: UIViewController {
         let submit = UIButton(type: .system)
         submit.translatesAutoresizingMaskIntoConstraints = false
         submit.setTitle("Submit", for: .normal)
+        submit.titleLabel?.font = UIFont.systemFont(ofSize: 32)
+        submit.tintColor = .systemGreen
         submit.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         view.addSubview(submit)
         
         let clear = UIButton(type: .system)
         clear.translatesAutoresizingMaskIntoConstraints = false
         clear.setTitle("Clear", for: .normal)
+        clear.titleLabel?.font = UIFont.systemFont(ofSize: 32)
         clear.addTarget(self, action: #selector(clearTapped), for: .touchUpInside)
         view.addSubview(clear)
         
@@ -118,6 +122,9 @@ class ViewController: UIViewController {
                 letterButton.addTarget(self, action: #selector(letterTapped), for: .touchUpInside)
                 let frame = CGRect(x: col * width, y: row * height, width: width, height: height)
                 letterButton.frame = frame
+                letterButton.layer.cornerRadius = 12.0
+                letterButton.layer.borderWidth = 1.0
+                letterButton.layer.borderColor = UIColor.darkGray.cgColor
                 buttonsView.addSubview(letterButton)
                 letterButtons.append(letterButton)
             }
@@ -148,13 +155,19 @@ class ViewController: UIViewController {
             answersLabel.text = splitAnswers?.joined(separator: "\n")
 
             currentAnswer.text = ""
-            score += 1
+            score += 10
+            numberOfCorrectAnswer += 1
 
-            if score % 7 == 0 {
+            if numberOfCorrectAnswer  == 7 {
                 let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
                 present(ac, animated: true)
             }
+        } else {
+            score -= 10
+            let ac = UIAlertController(title: "Opps !", message: "Clear and try again", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default))
+            present(ac, animated: true)
         }
     }
     
