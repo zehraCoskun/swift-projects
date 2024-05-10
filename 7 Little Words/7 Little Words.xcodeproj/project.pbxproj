@@ -13,6 +13,8 @@
 		A69802432BECFE6500235B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69802412BECFE6500235B55 /* Main.storyboard */; };
 		A69802452BECFE6600235B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69802442BECFE6600235B55 /* Assets.xcassets */; };
 		A69802482BECFE6600235B55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69802462BECFE6600235B55 /* LaunchScreen.storyboard */; };
+		A69802512BEE1F2700235B55 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = A698024F2BEE1F2700235B55 /* level2.txt */; };
+		A69802522BEE1F2700235B55 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = A69802502BEE1F2700235B55 /* level1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A69802442BECFE6600235B55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A69802472BECFE6600235B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A69802492BECFE6600235B55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A698024F2BEE1F2700235B55 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
+		A69802502BEE1F2700235B55 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		A698023A2BECFE6500235B55 /* 7 Little Words */ = {
 			isa = PBXGroup;
 			children = (
+				A69802502BEE1F2700235B55 /* level1.txt */,
+				A698024F2BEE1F2700235B55 /* level2.txt */,
 				A698023B2BECFE6500235B55 /* AppDelegate.swift */,
 				A698023D2BECFE6500235B55 /* SceneDelegate.swift */,
 				A698023F2BECFE6500235B55 /* ViewController.swift */,
@@ -125,8 +131,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69802522BEE1F2700235B55 /* level1.txt in Resources */,
 				A69802482BECFE6600235B55 /* LaunchScreen.storyboard in Resources */,
 				A69802452BECFE6600235B55 /* Assets.xcassets in Resources */,
+				A69802512BEE1F2700235B55 /* level2.txt in Resources */,
 				A69802432BECFE6500235B55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
