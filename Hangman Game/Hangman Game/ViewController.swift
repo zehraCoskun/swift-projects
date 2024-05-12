@@ -17,35 +17,24 @@ class ViewController: UIViewController {
     
     var allWords = [String]()
     var selectedWord : String! = "hello"
-    var answerChars = [Character]()
+    var usersWords = ["     ","     ","     ","     ","     ","     ","     "]{
+        didSet{
+            setCharViews()
+        }
+    }
     var selectedChars = [Character]()
+    var count = 0
     
     override func loadView() {
         view = UIView()
         view.backgroundColor = .systemGray2
         
-        titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "Hangman Game"
-        titleLabel.font = UIFont.systemFont(ofSize: 32)
-        titleLabel.tintColor = .systemGray
-        view.addSubview(titleLabel)
+        setTitleLabel()
+        setAnswerTextField()
         
         charViews = UIView()
         charViews.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(charViews)
-        
-        answerTextField = UITextField()
-        answerTextField.translatesAutoresizingMaskIntoConstraints = false
-        answerTextField.placeholder = "Enter your answer"
-        answerTextField.font = UIFont.systemFont(ofSize: 18)
-        answerTextField.layer.borderWidth = 0.5
-        answerTextField.layer.borderColor = UIColor.systemGray.cgColor
-        answerTextField.layer.cornerRadius = 6.0
-        if let answerTextFieldText =  answerTextField.text{
-            answerChars = Array(answerTextFieldText)
-        }
-        view.addSubview(answerTextField)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
@@ -86,7 +75,7 @@ class ViewController: UIViewController {
                         let charLabel = UILabel()
                         charLabel.layer.backgroundColor = UIColor.white.cgColor
                         charLabel.font = UIFont.systemFont(ofSize: 18)
-                        charLabel.text = String(selectedChars[col])
+                        charLabel.text = String(usersWords[row].prefix(col+1).suffix(1)) //userWords dizisi güncellendikçe buranın güncellenmesini nasıl sağlarım
                         charLabel.textAlignment = .center
                         let x = CGFloat(col) * (width + buttonSpacing)
                                 let y = CGFloat(row) * (height + buttonSpacing)
@@ -119,5 +108,61 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
 
+    func setTitleLabel(){
+        titleLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.text = "Hangman Game"
+        titleLabel.font = UIFont.systemFont(ofSize: 32)
+        titleLabel.tintColor = .systemGray
+        view.addSubview(titleLabel)
+    }
+    func setAnswerTextField(){
+        answerTextField = UITextField()
+        answerTextField.translatesAutoresizingMaskIntoConstraints = false
+        answerTextField.placeholder = "Enter your answer"
+        answerTextField.font = UIFont.systemFont(ofSize: 18)
+        answerTextField.keyboardType = .alphabet
+        answerTextField.layer.borderWidth = 0.5
+        answerTextField.layer.borderColor = UIColor.systemGray.cgColor
+        answerTextField.layer.cornerRadius = 6.0
+        answerTextField.delegate = self
+        view.addSubview(answerTextField)
+    }
+    
+    func startGame(){
+        let ac = UIAlertController(title: "Game Over",
+                                   message: "Your word : \(selectedWord ?? "hello")",
+                                   preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(ac, animated: true)
+    }
+
+}
+extension ViewController : UITextFieldDelegate{
+    //enter tuşuna basıldığında kullanılan metod
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if let answerTextFieldText =  answerTextField.text{
+            if answerTextFieldText.count != 5{
+                let ac = UIAlertController(title: "Opss!", 
+                                           message: "You must write a word of only 5 letters",
+                                           preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Ok", style: .default))
+                present(ac, animated: true)
+            } else if answerTextFieldText.count == 5 {
+                usersWords.insert(answerTextFieldText, at: count)
+                usersWords.remove(at: count+1)
+                count += 1
+                print(count)
+                if count == 7 {
+                    startGame()
+                }
+                print(usersWords)
+            }
+        }
+           textField.text = ""
+           textField.resignFirstResponder()
+           return false
+       }
 }
 
