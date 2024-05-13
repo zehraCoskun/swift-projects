@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var toggleButton : UIButton!
     
     var allWords = [String]()
-    var selectedWord : String! = "APPLE"
+    var selectedWord = "APPLE"
     var usersWords = ["     ","     ","     ","     ","     ","     ","     "]{
         didSet{
             setCharViews()
@@ -94,7 +94,7 @@ class ViewController: UIViewController {
                     
                         let labelText = String(usersWords[row].prefix(col+1).suffix(1))
 
-                        if labelText == selectedWord!.prefix(col+1).suffix(1) {
+                        if labelText == selectedWord.prefix(col+1).suffix(1) {
                             charLabel.layer.backgroundColor = UIColor.systemGreen.cgColor
                        
                         }
@@ -115,21 +115,21 @@ class ViewController: UIViewController {
             if let startWords = try? String(contentsOf: startWordsURL){
                 allWords = startWords.components(separatedBy: "\n")
             }
-            selectedWord = allWords.randomElement()?.uppercased()
-            print(selectedWord!)
+            selectedWord = allWords.randomElement()!.uppercased()
+            print(selectedWord)
         }
     }
     
     func startGame(didWin : Bool){
         if !didWin {
             let ac = UIAlertController(title: "Game Over",
-                                       message: "Your word : \(selectedWord ?? "hello")",
+                                       message: "Your word : \(selectedWord)",
                                        preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Ok", style: .default))
             present(ac, animated: true)
         }
         usersWords = ["     ","     ","     ","     ","     ","     ","     "]
-        selectedWord = allWords.randomElement()?.uppercased()
+        //selectedWord = allWords.randomElement()!.uppercased()
         charViews.subviews.forEach { $0.removeFromSuperview() }
         setCharViews()
         count = 0
