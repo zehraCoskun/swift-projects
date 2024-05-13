@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var charLabels = [UILabel]()
     var answerTextField : UITextField!
     var charViews : UIView!
-    
+    var toggleButton : UIButton!
     
     var allWords = [String]()
     var selectedWord : String! = "APPLE"
@@ -23,12 +23,19 @@ class ViewController: UIViewController {
         }
     }
     var count = 0
+    var fileName = "hangmanTr"{
+        didSet{
+            getWords()
+            startGame(didWin: true)
+        }
+    }
     
     override func loadView() {
         view = UIView()
         view.backgroundColor = .systemGray2
         
         setTitleLabel()
+        setToggleButton()
         setAnswerTextField()
         
         charViews = UIView()
@@ -38,6 +45,9 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            toggleButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            toggleButton.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor),
             
             charViews.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             charViews.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -100,11 +110,13 @@ class ViewController: UIViewController {
     }
     
     func getWords(){
-        if let startWordsURL = Bundle.main.url(forResource: "hangman", withExtension: "txt") {
+        
+        if let startWordsURL = Bundle.main.url(forResource:fileName, withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL){
                 allWords = startWords.components(separatedBy: "\n")
             }
             selectedWord = allWords.randomElement()?.uppercased()
+            print(selectedWord!)
         }
     }
     
@@ -126,10 +138,10 @@ class ViewController: UIViewController {
     
     func checkAnswer(selectedWord : String, usersAnswer : String){
         if selectedWord == usersAnswer {
-            let ac = UIAlertController(title: "Congratulations !", 
+            let ac = UIAlertController(title: "Congratulations 🎉",
                                        message: "That's the right word",
                                        preferredStyle: .actionSheet)
-            ac.addAction(UIAlertAction(title: "Thank you <3", 
+            ac.addAction(UIAlertAction(title: "🥳",
                                        style: .default){[weak self] _ in
                 self?.startGame(didWin: true)
             })
@@ -144,6 +156,25 @@ class ViewController: UIViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 32)
         titleLabel.tintColor = .systemGray
         view.addSubview(titleLabel)
+    }
+    
+    func setToggleButton(){
+        toggleButton = UIButton()
+        toggleButton.translatesAutoresizingMaskIntoConstraints = false
+        toggleButton.setTitle("TR", for: .normal)
+        toggleButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        toggleButton.setTitleColor(UIColor.white, for: .normal)
+        toggleButton.setTitleColor(UIColor.black, for: .selected)
+        toggleButton.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+        toggleButton.addTarget(self, action: #selector(toggleButtonTapped(_:)), for: .touchUpInside)
+        view.addSubview(toggleButton)
+        
+    }
+    @objc func toggleButtonTapped(_ sender: UIButton){
+        sender.isSelected = !sender.isSelected
+        let title = sender.isSelected ? "EN" : "TR"
+        fileName = sender.isSelected ? "hangmanEn" : "hangmanTr"
+        sender.setTitle(title, for: .normal)
     }
     func setAnswerTextField(){
         answerTextField = UITextField()

@@ -13,7 +13,8 @@
 		A659C1862BEEADF8008F0DB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A659C1842BEEADF8008F0DB9 /* Main.storyboard */; };
 		A659C1882BEEADFA008F0DB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A659C1872BEEADFA008F0DB9 /* Assets.xcassets */; };
 		A659C18B2BEEADFA008F0DB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A659C1892BEEADFA008F0DB9 /* LaunchScreen.storyboard */; };
-		A659C1932BEEAEA4008F0DB9 /* hangman.txt in Resources */ = {isa = PBXBuildFile; fileRef = A659C1922BEEAEA4008F0DB9 /* hangman.txt */; };
+		A659C1932BEEAEA4008F0DB9 /* hangmanEn.txt in Resources */ = {isa = PBXBuildFile; fileRef = A659C1922BEEAEA4008F0DB9 /* hangmanEn.txt */; };
+		A6DFD4012BF2544A00DE3B48 /* hangmanTr.txt in Resources */ = {isa = PBXBuildFile; fileRef = A6DFD4002BF2544A00DE3B48 /* hangmanTr.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		A659C1872BEEADFA008F0DB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A659C18A2BEEADFA008F0DB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A659C18C2BEEADFA008F0DB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A659C1922BEEAEA4008F0DB9 /* hangman.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hangman.txt; sourceTree = "<group>"; };
+		A659C1922BEEAEA4008F0DB9 /* hangmanEn.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hangmanEn.txt; sourceTree = "<group>"; };
+		A6DFD4002BF2544A00DE3B48 /* hangmanTr.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hangmanTr.txt; path = ../../../../hangmanTr.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 		A659C17D2BEEADF8008F0DB9 /* Hangman Game */ = {
 			isa = PBXGroup;
 			children = (
-				A659C1922BEEAEA4008F0DB9 /* hangman.txt */,
+				A659C1922BEEAEA4008F0DB9 /* hangmanEn.txt */,
+				A6DFD4002BF2544A00DE3B48 /* hangmanTr.txt */,
 				A659C17E2BEEADF8008F0DB9 /* AppDelegate.swift */,
 				A659C1802BEEADF8008F0DB9 /* SceneDelegate.swift */,
 				A659C1822BEEADF8008F0DB9 /* ViewController.swift */,
@@ -128,10 +131,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6DFD4012BF2544A00DE3B48 /* hangmanTr.txt in Resources */,
 				A659C18B2BEEADFA008F0DB9 /* LaunchScreen.storyboard in Resources */,
 				A659C1882BEEADFA008F0DB9 /* Assets.xcassets in Resources */,
 				A659C1862BEEADF8008F0DB9 /* Main.storyboard in Resources */,
-				A659C1932BEEAEA4008F0DB9 /* hangman.txt in Resources */,
+				A659C1932BEEAEA4008F0DB9 /* hangmanEn.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
