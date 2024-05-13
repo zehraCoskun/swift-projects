@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     var count = 0
     var fileName = "hangmanTr"{
         didSet{
-            getWords()
             startGame(didWin: true)
         }
     }
@@ -129,8 +128,8 @@ class ViewController: UIViewController {
             present(ac, animated: true)
         }
         usersWords = ["     ","     ","     ","     ","     ","     ","     "]
-        //selectedWord = allWords.randomElement()!.uppercased()
         charViews.subviews.forEach { $0.removeFromSuperview() }
+        getWords()
         setCharViews()
         count = 0
         
