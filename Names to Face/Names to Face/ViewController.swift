@@ -8,12 +8,29 @@
 import UIKit
 
 class ViewController: UICollectionViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-
+    
     var people = [Person]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
+        
+        let defaults = UserDefaults.standard
+        defaults.set(25, forKey: "Age")
+        defaults.set(true, forKey: "UseTouchID")
+        defaults.set(CGFloat.pi, forKey: "Pi")
+        
+        defaults.set("Zehra", forKey: "Name")
+        defaults.set(Date(), forKey: "LastRun")
+        
+        let array = ["Hello", "World"]
+        defaults.set(array, forKey: "SavedArray")
+
+        let dict = ["Name": "Zehra", "Country": "TR"]
+        defaults.set(dict, forKey: "SavedDict")
+        
+        let array2 = defaults.object(forKey:"SavedArray") as? [String] ?? [String]()
+        let dict2 = defaults.object(forKey: "SavedDict") as? [String: String] ?? [String: String]()
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return people.count
