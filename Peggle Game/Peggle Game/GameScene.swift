@@ -26,6 +26,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    let balls = ["ballRed","ballBlue","ballGreen","ballGrey","ballPurple","ballYellow", "ballCyan"]
+    
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         
@@ -83,13 +85,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
                 addChild(box)
             } else {
-                let ball = SKSpriteNode(imageNamed: "ballRed")
-                ball.name = "ball"
-                ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width/2)
-                ball.physicsBody?.restitution = 0.4
-                ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
-                ball.position = location
-                addChild(ball)
+                if(location.y > 500){
+                    let ballName = balls.randomElement()
+                    let ball = SKSpriteNode(imageNamed: ballName!)
+                    ball.name = "ball"
+                    ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width/2)
+                    ball.physicsBody?.restitution = 0.4
+                    ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
+                    ball.position = location
+                    addChild(ball)
+                }
+                
             }
         }
     }
@@ -140,8 +146,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     func destroy(ball: SKNode) {
+        if let fireParticles = SKEmitterNode(fileNamed: "FireParticles") {
+                fireParticles.position = ball.position
+                addChild(fireParticles)
+            }
         ball.removeFromParent()
     }
+    
     func didBegin(_ contact: SKPhysicsContact) {
         guard let nodeA = contact.bodyA.node else {return}
         guard let nodeB = contact.bodyB.node else {return}
