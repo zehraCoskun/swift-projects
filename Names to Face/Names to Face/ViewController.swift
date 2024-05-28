@@ -14,23 +14,14 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
-        
         let defaults = UserDefaults.standard
-        defaults.set(25, forKey: "Age")
-        defaults.set(true, forKey: "UseTouchID")
-        defaults.set(CGFloat.pi, forKey: "Pi")
+        if let savedPeople = defaults.object(forKey: "people") as? Data{
+            if let decodedPeople = try?
+                NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedPeople) as? [Person]{
+                people = decodedPeople
+            } //48.3
+        }
         
-        defaults.set("Zehra", forKey: "Name")
-        defaults.set(Date(), forKey: "LastRun")
-        
-        let array = ["Hello", "World"]
-        defaults.set(array, forKey: "SavedArray")
-
-        let dict = ["Name": "Zehra", "Country": "TR"]
-        defaults.set(dict, forKey: "SavedDict")
-        
-        let array2 = defaults.object(forKey:"SavedArray") as? [String] ?? [String]()
-        let dict2 = defaults.object(forKey: "SavedDict") as? [String: String] ?? [String: String]()
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return people.count
@@ -86,7 +77,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac] _ in
             guard let newName = ac?.textFields?[0].text else { return }
             person.name = newName
-
+            self?.save()
             self?.collectionView.reloadData()
                 })
 
@@ -111,6 +102,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         
         let person = Person(name: "Unknown", image: imageName)
         people.append(person)
+        save()
         collectionView.reloadData()
         
         dismiss(animated: true)
@@ -119,6 +111,13 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
+    }
+    
+    func save(){
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: people, requiringSecureCoding: false){
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+        }
     }
 
 }
