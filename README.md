@@ -15,7 +15,8 @@ This project is a word puzzle game developed in Swift for iOS. The game presents
 - **Level Progression**: Advance to the next level after completing each one.
 - **Clear and Submit Buttons**: Manage current guesses easily.
 
-This game provides an engaging and challenging experience, perfect for word puzzle enthusiasts.
+
+
 
 ## Türkçe
 
@@ -30,5 +31,3 @@ Bu proje, iOS için Swift ile geliştirilmiş bir kelime bulmaca oyunudur. Oyun,
 - **Puanlama Sistemi**: Oyuncunun puanını takip eder ve görüntüler.
 - **Seviye İlerlemesi**: Her seviyeyi tamamladıktan sonra bir sonraki seviyeye geçin.
 - **Temizle ve Gönder Düğmeleri**: Mevcut tahminleri kolayca yönetin.
-
-Bu oyun, kelime bulmaca meraklıları için mükemmel bir deneyim sunar.
