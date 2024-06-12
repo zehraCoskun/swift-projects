@@ -27,11 +27,13 @@ class ViewController: UIViewController {
     
     override func loadView() {
         view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "bgColor")
         
         scoreLabel = UILabel()
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         scoreLabel.textAlignment = .right
+        scoreLabel.font = UIFont.systemFont(ofSize: 48)
+        scoreLabel.textColor = UIColor(named: "blueLight")
         scoreLabel.text = "Score: 0"
         view.addSubview(scoreLabel)
         
@@ -39,14 +41,14 @@ class ViewController: UIViewController {
         cluesLabel.translatesAutoresizingMaskIntoConstraints = false
         cluesLabel.numberOfLines = 0
         cluesLabel.text = "Claues"
-        cluesLabel.font = UIFont.systemFont(ofSize: 24)
+        cluesLabel.font = UIFont.systemFont(ofSize: 32)
         view.addSubview(cluesLabel)
         
         answersLabel = UILabel()
         answersLabel.translatesAutoresizingMaskIntoConstraints = false
         answersLabel.numberOfLines = 0
         answersLabel.text = "Answer"
-        answersLabel.font = UIFont.systemFont(ofSize: 24)
+        answersLabel.font = UIFont.systemFont(ofSize: 32)
         answersLabel.textAlignment = .right
         answersLabel.setContentHuggingPriority(UILayoutPriority(1), for: .vertical)
         view.addSubview(answersLabel)
@@ -63,15 +65,16 @@ class ViewController: UIViewController {
         let submit = UIButton(type: .system)
         submit.translatesAutoresizingMaskIntoConstraints = false
         submit.setTitle("Submit", for: .normal)
-        submit.titleLabel?.font = UIFont.systemFont(ofSize: 32)
-        submit.tintColor = .systemGreen
+        submit.titleLabel?.font = UIFont.systemFont(ofSize: 38)
+        submit.tintColor = UIColor(named: "blueLight")
         submit.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         view.addSubview(submit)
         
         let clear = UIButton(type: .system)
         clear.translatesAutoresizingMaskIntoConstraints = false
         clear.setTitle("Clear", for: .normal)
-        clear.titleLabel?.font = UIFont.systemFont(ofSize: 32)
+        clear.titleLabel?.font = UIFont.systemFont(ofSize: 38)
+        clear.tintColor = UIColor(named: "blueDark")
         clear.addTarget(self, action: #selector(clearTapped), for: .touchUpInside)
         view.addSubview(clear)
         
@@ -95,9 +98,9 @@ class ViewController: UIViewController {
             
             currentAnswer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             currentAnswer.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
-            currentAnswer.topAnchor.constraint(equalTo: cluesLabel.bottomAnchor, constant: 20),
+            currentAnswer.topAnchor.constraint(equalTo: cluesLabel.bottomAnchor, constant: 0),
             
-            submit.topAnchor.constraint(equalTo: currentAnswer.bottomAnchor),
+            submit.topAnchor.constraint(equalTo: currentAnswer.bottomAnchor, constant: 20),
             submit.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -100),
             submit.heightAnchor.constraint(equalToConstant: 44),
 
@@ -119,12 +122,13 @@ class ViewController: UIViewController {
                 let letterButton = UIButton(type: .system)
                 letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 36)
                 letterButton.setTitle("WWW", for: .normal)
+                letterButton.tintColor = UIColor(named: "grey")
                 letterButton.addTarget(self, action: #selector(letterTapped), for: .touchUpInside)
                 let frame = CGRect(x: col * width, y: row * height, width: width, height: height)
                 letterButton.frame = frame
                 letterButton.layer.cornerRadius = 12.0
                 letterButton.layer.borderWidth = 1.0
-                letterButton.layer.borderColor = UIColor.darkGray.cgColor
+                letterButton.layer.borderColor = UIColor(named: "blueDark")?.cgColor
                 buttonsView.addSubview(letterButton)
                 letterButtons.append(letterButton)
             }
