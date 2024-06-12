@@ -27,6 +27,16 @@ This project is a word puzzle game developed in Swift for iOS. The game presents
 
 # Anagram Game
 
+#### Description
+This project is an anagram puzzle game developed in Swift for iOS. Players are given a word and must create new words from its letters. The game keeps track of the words that have already been used and ensures that only valid words are accepted. Players can start a new game or refresh the current one to get a new starting word.
+
+#### Key Features
+- **Interactive UI**: Table view to display used words.
+- **Dynamic Word List**: Players can add words dynamically.
+- **Validation System**: Ensures words are possible, original, and real.
+- **New Game and Refresh**: Options to start a new game or refresh the current word.
+- **Submit and Error Handling**: Submit answers and handle errors with alerts.
+
 # Guess The Flag
 
 # Hangman Game
@@ -59,6 +69,17 @@ Bu proje, iOS için Swift ile geliştirilmiş bir kelime bulmaca oyunudur. Oyun,
 - **Temizle ve Gönder Düğmeleri**: Mevcut tahminleri kolayca yönetin.
 
 # AnagramGame
+
+#### Açıklama
+Bu proje, iOS için Swift ile geliştirilmiş bir anagram bulmaca oyunudur. Oyunculara bir kelime verilir ve bu kelimenin harflerinden yeni kelimeler oluşturulması gerekmektedir. Oyun, daha önce kullanılan kelimeleri takip eder ve yalnızca geçerli kelimeleri kabul eder. Oyuncular yeni bir oyun başlatabilir veya mevcut kelimeyi yenileyebilirler.
+
+#### Ana Özellikler
+- **Etkileşimli Arayüz**: Kullanılmış kelimeleri göstermek için tablo görünümü.
+- **Dinamik Kelime Listesi**: Oyuncuların dinamik olarak kelime ekleyebilmesi.
+- **Doğrulama Sistemi**: Kelimelerin mümkün, orijinal ve gerçek olduğunu kontrol eder.
+- **Yeni Oyun ve Yenileme**: Yeni bir oyun başlatma veya mevcut kelimeyi yenileme seçenekleri.
+- **Gönder ve Hata Yönetimi**: Cevapları gönderme ve hataları uyarılarla yönetme.
+
 
 # Guess The Flag
 
