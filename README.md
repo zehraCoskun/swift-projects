@@ -1,10 +1,9 @@
+- [English](#english)
+- [Türkçe](#türkçe)
+
+## English
+
 # 7 Little Words
-
-## Table of Contents
-- [EN](#en)
-- [TR](#tr)
-
-# en
 
 ### Description
 This project is a word puzzle game developed in Swift for iOS. The game presents players with a series of clues and scrambled letters. Players must form the correct words using the provided letters. Each correct answer awards points, while incorrect answers reduce the score. The game progresses through multiple levels, with each level increasing in difficulty.
@@ -18,7 +17,9 @@ This project is a word puzzle game developed in Swift for iOS. The game presents
 
 This game provides an engaging and challenging experience, perfect for word puzzle enthusiasts.
 
-# tr
+## Türkçe
+
+# 7 Little Words
 
 ### Açıklama
 Bu proje, iOS için Swift ile geliştirilmiş bir kelime bulmaca oyunudur. Oyun, oyunculara bir dizi ipucu ve karışık harfler sunar. Oyuncular, verilen harfleri kullanarak doğru kelimeleri oluşturmalıdır. Her doğru cevap puan kazandırırken, yanlış cevaplar puanı düşürür. Oyun, her seviyenin zorluğunun arttığı birden fazla seviyede ilerler.
