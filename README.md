@@ -1,8 +1,17 @@
 - [English](#english) / [Türkçe](#türkçe)
+
+  
 - [7 Little Words](#7-little-words)
 - [Anagram Game](#anagram-game)
+- [Guess The Flag](#guess-the-flag)
+- [Hangman Game](#hangman-game)
+- [Names to Face](#names-to-face)
+- [Peggle Game](#peggle-game)
+- [Petitions](#petitions)
+- [Shopping List](#shopping-list)
+- [Web View Project](#web-view-project)
 
-## English
+### English
 
 # 7 Little Words
 
@@ -18,13 +27,24 @@ This project is a word puzzle game developed in Swift for iOS. The game presents
 
 # Anagram Game
 
+# Guess The Flag
+
+# Hangman Game
+
+# Names to Face
+
+# Peggle Game
+
+# Petitions
+
+# Shopping List
+
+# Web View Project
 
 
 
 
-
-
-## Türkçe
+### Türkçe
 
 # 7LittleWords
 
@@ -39,3 +59,17 @@ Bu proje, iOS için Swift ile geliştirilmiş bir kelime bulmaca oyunudur. Oyun,
 - **Temizle ve Gönder Düğmeleri**: Mevcut tahminleri kolayca yönetin.
 
 # AnagramGame
+
+# Guess The Flag
+
+# Hangman Game
+
+# Names to Face
+
+# Peggle Game
+
+# Petitions
+
+# ShoppingList
+
+# Web View Project
