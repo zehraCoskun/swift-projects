@@ -1,5 +1,6 @@
-- [English](#english)
-- [Türkçe](#türkçe)
+- [English](#english) / [Türkçe](#türkçe)
+- [7 Little Words](#7lw)
+- [Anagram Game](#AnagramGame)
 
 ## English
 
@@ -15,7 +16,7 @@ This project is a word puzzle game developed in Swift for iOS. The game presents
 - **Level Progression**: Advance to the next level after completing each one.
 - **Clear and Submit Buttons**: Manage current guesses easily.
 
-
+# Anagram Game
 
 
 ## Türkçe
@@ -31,3 +32,5 @@ Bu proje, iOS için Swift ile geliştirilmiş bir kelime bulmaca oyunudur. Oyun,
 - **Puanlama Sistemi**: Oyuncunun puanını takip eder ve görüntüler.
 - **Seviye İlerlemesi**: Her seviyeyi tamamladıktan sonra bir sonraki seviyeye geçin.
 - **Temizle ve Gönder Düğmeleri**: Mevcut tahminleri kolayca yönetin.
+
+# Anagram Game
