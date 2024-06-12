@@ -1,4 +1,4 @@
-- [English](#english) / [Türkçe](#türkçe)
+[English](#english) / [Türkçe](#türkçe)
 
   
 - [7 Little Words](#7-little-words)
