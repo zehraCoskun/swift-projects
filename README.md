@@ -1,10 +1,10 @@
 - [English](#english) / [Türkçe](#türkçe)
-- [7 Little Words](#7LittleWords)
-- [Anagram Game](#AnagramGame)
+- [7 Little Words](#7-little-words)
+- [Anagram Game](#anagram-game)
 
 ## English
 
-# 7LittleWords
+# 7 Little Words
 
 ### Description
 This project is a word puzzle game developed in Swift for iOS. The game presents players with a series of clues and scrambled letters. Players must form the correct words using the provided letters. Each correct answer awards points, while incorrect answers reduce the score. The game progresses through multiple levels, with each level increasing in difficulty.
@@ -16,7 +16,12 @@ This project is a word puzzle game developed in Swift for iOS. The game presents
 - **Level Progression**: Advance to the next level after completing each one.
 - **Clear and Submit Buttons**: Manage current guesses easily.
 
-# AnagramGame
+# Anagram Game
+
+
+
+
+
 
 
 ## Türkçe
